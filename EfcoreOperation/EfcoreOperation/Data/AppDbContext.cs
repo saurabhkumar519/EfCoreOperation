@@ -9,5 +9,7 @@ namespace EfcoreOperation.Data
         {
                 
         }
+
+        DbSet<Book>Books { get; set; }
     }
 }
