@@ -10,6 +10,28 @@ namespace EfcoreOperation.Data
                 
         }
 
-        DbSet<Book>Books { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Language>().HasData(
+            new Language()
+            {
+                Id = 1,
+                Title = "Hindi",
+                Decription = "Hindi"
+
+            },
+            new Language()
+            {
+                Id = 2,
+                Title = "English",
+                Decription = "English"
+
+            });
+        }
+
+
+      public  DbSet<Book> Books { get; set; }
+      public  DbSet<Language> Languages { get; set; }
     }
 }
